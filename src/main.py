@@ -1,27 +1,35 @@
-import requests
+# main.py
+import time
+from terminal import Terminal
+from functions import Functions, log
 
 """
-
-An system that automates voting on Urban Dictionary.
-plz no spam >:(
-
+Toggle error prints
 """
-
-class terminal:
-    def __init__(self):
-        from pystyle import System
-import os
-        System.Clear()
-
-class functions:
-    def request():
-        response = requests.post(
-            "https://api.urbandictionary.com/v0/vote",
-            json={"defid": 5010758, "direction": "up"},
-            headers={"Content-Type": "application/json"}
-        )
-
+ERR_PRINT_ENABLED = False
 
 if __name__ == "__main__":
     print("Starting..")
+    Terminal()
+    while True:
+        try:
+            post_id = int(input("Enter the Definition ID: "))
+            break
+        except ValueError:
+            log("ERR", "Invalid input. Please enter a valid number.")
 
+    while True:
+        choice = input("Upvote? (true/false): ").strip().lower()
+        if choice in {"true", "false"}:
+            direction = "up" if choice == "true" else "down"
+            break
+        log("ERR", "Invalid input. Please enter 'true' or 'false'.")
+
+    while True:
+        from pystyle import System, Center
+        Functions.begin(post_id=post_id, direction=direction)
+        System.Clear()
+        print("\n\n")
+        print(Center.XCenter("Cycle finished, beginning new cycle.."))
+        print("\n")
+        time.sleep(3)
