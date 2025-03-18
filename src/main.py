@@ -10,6 +10,7 @@ plz no spam >:(
 class terminal:
     def __init__(self):
         from pystyle import System
+import os
         System.Clear()
 
 class functions:
@@ -23,3 +24,4 @@ class functions:
 
 if __name__ == "__main__":
     print("Starting..")
+
