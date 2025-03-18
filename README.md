@@ -22,7 +22,7 @@ This project is a simple script that automates sending upvotes or downvotes to U
     ```
 
 - Add proxies
-    http://ip:port
+    src/proxies.txt -> `http://ip:port`
        
 
 ## Disclaimer
