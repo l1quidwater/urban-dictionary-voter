@@ -16,13 +16,13 @@ This project is a simple script that automates sending upvotes or downvotes to U
 
 ## Installation
 
-- Install dependencies:
+- ⭐ Install dependencies:
     ```
     pip install -r requirements.txt
     ```
 
-- Add proxies
-    src/proxies.txt -> `http://ip:port`
+- ⭐ Add proxies
+    `src/proxies.txt` -> `http://ip:port`
        
 
 ## Disclaimer
